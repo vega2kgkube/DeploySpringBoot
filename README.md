@@ -23,3 +23,13 @@ docker run --name db-svc -d \
   --character-set-server=utf8mb4 \
   --collation-server=utf8mb4_unicode_ci
  ```
+* SpringBoot Run 하기
+``` 
+docker run --name myboot-svc -d -p 8080:8080 --net msanet --net-alias=myboot-svc \
+-e DB_HOST='db-svc' \
+-e DB_PORT='3306' \
+-e DB_DATABASE='boot_db' \
+-e DB_USERNAME='boot' \
+-e DB_PASSWORD='boot' \
+myuser/springbootreactjs:0.1
+```
