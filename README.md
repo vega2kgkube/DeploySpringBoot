@@ -10,12 +10,16 @@
     ```
 * MariaDB Run 하기
 ``` 
-  docker run --name db-svc -d --net msanet --net-alias=db-svc -p 3306:3306 \
---character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci \  
--e MYSQL_ROOT_PASSWORD='maria' \
--e MYSQL_DATABASE='boot_db' \
--e MYSQL_USER='boot' \
--e MYSQL_PASSWORD='boot' \
--e MYSQL_ROOT_HOST='%' \
-mariadb:10.11.8
+docker run --name db-svc -d \
+  --net msanet \
+  --net-alias=db-svc \
+  -p 3306:3306 \
+  -e MYSQL_ROOT_PASSWORD='maria' \
+  -e MYSQL_DATABASE='boot_db' \
+  -e MYSQL_USER='boot' \
+  -e MYSQL_PASSWORD='boot' \
+  -e MYSQL_ROOT_HOST='%' \
+  mariadb:10.11.8 \
+  --character-set-server=utf8mb4 \
+  --collation-server=utf8mb4_unicode_ci
  ```
