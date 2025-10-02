@@ -33,3 +33,8 @@ docker run --name myboot-svc -d -p 8080:8080 --net msanet --net-alias=myboot-svc
 -e DB_PASSWORD='boot' \
 myuser/springbootreactjs:0.1
 ```
+
+* Reactjs Run 하기
+```
+docker run --name react-svc -d -p 80:80 --net msanet --net-alias=react-svc myuser/springbootreactjs:client0.1
+```
